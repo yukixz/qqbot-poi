@@ -7,9 +7,9 @@ module.exports = (content, send, robot, message) ->
     rangeStr = contents[1]
     rangeStr ?= "100"
     range = parseInt(rangeStr)
-    if range.toString() == rangeStr and 2 <= range <= 1000
+    if range.toString() == rangeStr and 2 <= range <= 7000
       name = message.from_user.nick
       send("[roll] #{name}: #{Math.ceil(Math.random() * range)} / #{range}")
     else
-      send("/roll 的有效范围为 2 ~ 1000")
+      send("/roll 的有效范围为 2 ~ 7000")
     
