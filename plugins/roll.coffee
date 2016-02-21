@@ -1,12 +1,11 @@
-matchRE = new RegExp('^/roll$')
-separatorRE = new RegExp('[ \t]+')
+separator = new RegExp('[ \t]+')
 
 module.exports = (content, send, robot, message) ->
   content = content.trim().toLowerCase()
-  contents = content.split(separatorRE)
+  contents = content.split(separator)
   return if contents.length == 0
 
-  if contents[0].match(matchRE)
+  if contents[0] == '/roll'
     rangeStr = contents[1]
     rangeStr ?= "100"
     range = parseInt(rangeStr)
