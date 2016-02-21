@@ -1,5 +1,5 @@
 module.exports = (content, send, robot, message) ->
-  content = content.toLowerCase()
+  content = content.trim().toLowerCase()
   contents = content.split(' ')
   return if contents.length == 0
 
