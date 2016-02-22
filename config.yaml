@@ -16,6 +16,7 @@ plugins:
     - debug2
     - faq
     - roll
+    - notify
 
 # apiserver plugin configration
 api_port:  3200

@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "js-yaml": ">= 3.0.0",
+    "later": "^1.2.0",
     "log": ">= 1.4.0",
     "minimist": "^1.2.0",
     "underscore": "^1.8.3"
