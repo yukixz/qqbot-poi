@@ -9,7 +9,7 @@ module.exports = (content, send, robot, message) ->
   return unless contents[0] == '/roll'
 
   ranges = []
-  for s, i in contents.slice(1)
+  for s, i in contents.slice(1, 5)
     n = parseInt(s)
     # Ignore all number after an invalid input.
     if Number.isNaN n
