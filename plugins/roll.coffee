@@ -1,17 +1,28 @@
+LOWER = 2
+UPPER = 7000
 separator = new RegExp('[ \t]+')
 
 module.exports = (content, send, robot, message) ->
   content = content.trim().toLowerCase()
   contents = content.split(separator)
-  return if contents.length == 0
+  return unless contents.length == 0
+  return unless contents[0] == '/roll'
 
-  if contents[0] == '/roll'
-    rangeStr = contents[1]
-    rangeStr ?= "100"
-    range = parseInt(rangeStr)
-    if range.toString() == rangeStr and 2 <= range <= 7000
-      name = message.from_user.nick
-      send("[roll] #{name}: #{Math.ceil(Math.random() * range)} / #{range}")
+  ranges = []
+  for s, i in contents.slice(0)
+    n = parseInt(s)
+    # Ignore all number after an invalid input.
+    if n == NaN
+      break
+    # Send help message on out of range
+    else if LOWER <= n <= UPPER
+      return send("/roll 的有效范围为 #{LOWER} ~ #{UPPER}")
+    # Valid number
     else
-      send("/roll 的有效范围为 2 ~ 7000")
-    
+      ranges.push n
+  if ranges.length == 0
+    ranges = [100]
+
+  rolls = ranges.map (n) -> "#{Math.ceil(Math.random() * n)} / #{n}"
+  name = message.from_user.nick
+  send("[roll] #{name}: #{rolls.join ', '}")
