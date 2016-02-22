@@ -1,8 +1,5 @@
 later = require 'later'
 
-GID = 1354250667  # poi
-
-
 later.date.UTC()
 
 class Notifier
@@ -17,7 +14,9 @@ class Notifier
     @praticeLater.clear()
 
   praticeNotify: ->
-    @qqbot.send_message_to_group(GID, "演习快刷新啦、赶紧打演习啦！")
+    group = @qqbot.get_group
+      account: 2643320628
+    @qqbot.send_message_to_group(group, "演习快刷新啦、赶紧打演习啦！")
 
 
 notifier = null
