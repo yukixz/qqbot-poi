@@ -23,6 +23,6 @@ module.exports = (content, send, robot, message) ->
   if ranges.length == 0
     ranges = [100]
 
-  rolls = ranges.map (n) -> "#{Math.ceil(Math.random() * n)} / #{n}"
+  rolls = ranges.map (n) -> "#{Math.ceil(Math.random() * n)}/#{n}"
   name = message.from_user.nick
   send("[roll] #{name}: #{rolls.join ', '}")
