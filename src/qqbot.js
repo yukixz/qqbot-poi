@@ -501,7 +501,8 @@
         case 121:
           return this.die("登录异常 " + code, resp);
         case 100012:
-          return this.relogin();
+          // return this.relogin();
+          return this.die("登录失效");
         default:
           return log.debug(resp);
       }
