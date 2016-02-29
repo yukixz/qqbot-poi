@@ -5,44 +5,54 @@
     "message": "poi 下载地址\n百度网盘：http://0u0.moe/poi\nGithub: https://github.com/poooi/poi/releases"
   },
   {
+    "keywords": ["版本", "最新版"],
+    "whitelist": ["红包"],
+    "message": "poi 最新版：5.2.0\n最新测试版：-\n版本号含「beta」的为测试版、请谨慎使用"
+  },
+  {
     "keywords": ["掉落", "哪里掉"],
     "whitelist": [],
     "message": "poi-statistics # 掉落统计：\nhttp://db.kcwiki.moe/drop/"
   },
   {
-    "keywords": ["带路", "多少制空", "制空多少"],
+    "keywords": ["带路", "攻略", "多少制空", "制空多少"],
     "whitelist": [],
-    "message": "请查询相关百科\n艦これ 攻略 Wiki http://wikiwiki.jp/kancolle/\n舰娘百科 http://zh.kcwiki.moe/"
+    "message": "海图信息及攻略请查询相关百科\n艦これ 攻略 Wiki http://wikiwiki.jp/kancolle/\n舰娘百科 http://zh.kcwiki.moe/"
   },
   {
-    "keywords": ["岛风go", "岛风狗", "锅go", "锅狗"],
-    "whitelist": ["不", "没"],
-    "message": "岛风go用户建议咨询岛风go客服"
+    "keywords": ["官推"],
+    "whitelist": [],
+    "message": "艦これ官方 Twitter：https://twitter.com/kancolle_staff\nkcwiki 官推翻译：http://t.kcwiki.moe/"
   },
   {
     "keywords": ["白屏"],
-    "whitelist": ["不", "没"],
-    "message": "请问用的是什么代理？"
+    "whitelist": ["不", "没", "还"],
+    "message": "白屏请先检查：\n1. poi 的代理设置是否正确\n2. poi 的主页是否不是 about:blank\n若仍有问题，请提供以下信息：\n1. poi 的版本号是什么？\n2. 用的是什么代理？\n3. poi 能否打开百度？"
+  },
+  {
+    "keywords": ["窗口大小"],
+    "whitelist": ["不", "没", "还"],
+    "message": "poi 窗口大小无法更改：\n1. 请按 Alt 打开菜单（Windows/Linux 用户）\n2. 在「poi」菜单中勾选「允许变更窗口大小」"
+  },
+  {
+    "keywords": ["秒猫"],
+    "whitelist": ["不", "没", "还"],
+    "message": "缓存猫处理：\n1. 请清空 poi 自定义缓存。缓存目录可在 poi 左下角工具栏打开\n2. 请检查代理的缓存设置"
   },
   {
     "keywords": ["什么群", "啥群"],
     "whitelist": [],
-    "message": "poi 群"
+    "message": "这里是 poi 用户讨论群兼舰娘讨论群"
+  },
+  {
+    "keywords": ["求奶", "奶我", "奶你", "奶他", "奶她"],
+    "whitelist": [],
+    "message": "众人皆欧 唯你独非"
   },
   {
     "keywords": ["复读"],
     "whitelist": [],
     "message": "人类的本质，只是一台复读机。"
-  },
-  {
-    "keywords": ["卡斩杀"],
-    "whitelist": [],
-    "message": "洗脸刷闪上支援、或者切丙"
-  },
-  {
-    "keywords": ["死宅"],
-    "whitelist": [],
-    "message": "四斋蒸鹅心"
   },
   {
     "keywords": ["早安", "早上好", "小鳖早"],
@@ -58,10 +68,5 @@
     "keywords": ["晚安", "好梦"],
     "whitelist": [],
     "message": "晚安"
-  },
-  {
-    "keywords": ["小鳖"],
-    "whitelist": ["傻", "笨", "白痴", "智障", "yuki", "喵"],
-    "message": "喵喵喵？"
   }
 ]
