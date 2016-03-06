@@ -2,13 +2,16 @@ fs = require 'fs'
 path = require 'path'
 
 FAQ = []
+DEFAULT_INTERVAL = 10
 LAST_TRIGGER = []
-THROTTLE = 10 * 1000
 
 fs.readFile path.join(__dirname, 'faq.json'), (err, data) ->
   try
     FAQ = JSON.parse data
     for faq, i in FAQ
+      # TODO: check faq.keywords and faq.message
+      faq.whitelist ?= []
+      faq.interval ?= DEFAULT_INTERVAL
       LAST_TRIGGER[i] = 0
   catch err
     console.error "Failed to load faq.json", err
@@ -24,7 +27,7 @@ module.exports = (content, send, robot, message) ->
   now = Date.now()
   for faq, i in FAQ
     if match(content, faq.keywords)
-      if not match(content, faq.whitelist) and (now - LAST_TRIGGER[i]) > THROTTLE
+      if not match(content, faq.whitelist) and (now - LAST_TRIGGER[i]) > (faq.interval * 1000)
         LAST_TRIGGER[i] = now
         send(faq.message)
       return
