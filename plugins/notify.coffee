@@ -32,7 +32,7 @@ MONTHLY_MESSAGE = "12:00 PM JST. Extra Operation 已刷新"
 class Notifier
   constructor: (qqbot) ->
     @qqbot = qqbot
-    @praticeSchedule = later.parse.cron("0,30,45,50,55 5,17 * * *")
+    @praticeSchedule = later.parse.cron("0,30,40,50 5,17 * * *")
     @hourlySchedule = later.parse.cron("0 * * * *")
 
   start: ->
