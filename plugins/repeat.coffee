@@ -1,8 +1,9 @@
 fs = require 'fs'
 path = require 'path'
 
-QUEUE_SIZE = 8
-REPEAT_COUNT = 3
+QUEUE_SIZE = 20
+REPEAT_COUNT_MIN = 2
+REPEAT_COUNT_MAX = 4
 BLACKLIST = []
 
 
@@ -28,6 +29,7 @@ module.exports = (content, send, robot, message) ->
   msg ?=
     text: text
     count: 0
+    repeated: false
   msg.count += 1
 
   # Push message back to queue
@@ -35,5 +37,8 @@ module.exports = (content, send, robot, message) ->
   queue.shift() if queue.length > QUEUE_SIZE
 
   # Repeat message
-  if msg.count == REPEAT_COUNT
-    send(text)
+  return if msg.repeated
+  return unless REPEAT_COUNT_MIN <= msg.count <= REPEAT_COUNT_MAX
+  if (Math.random() * (REPEAT_COUNT_MAX - msg.count + 1)) < 1
+    msg.repeated = true
+    send(msg.text)
