@@ -1,79 +1,71 @@
 [
   {
     "keywords": ["下载"],
-    "whitelist": [],
     "message": "poi 下载地址\n百度网盘：https://0u0.moe/poi\nGithub: https://github.com/poooi/poi/releases"
   },
   {
     "keywords": ["版本", "最新版"],
-    "whitelist": ["你的QQ"],
-    "message": "poi 最新版：5.2.0\n最新测试版：-\n版本号含「beta」的为测试版、请谨慎使用"
+    "whitelist": ["qq"],
+    "message": "poi 最新版：5.2.0\n最新测试版：6.0.0-beta.1 本测试版必须使用插件包更新所有插件\n版本号含「beta」的为测试版、请谨慎使用"
   },
   {
     "keywords": ["掉落", "掉率", "哪里掉"],
-    "whitelist": [],
     "message": "poi-statistics # 掉落统计：\nhttp://db.kcwiki.moe/drop/"
   },
   {
     "keywords": ["攻略", "多少制空", "制空多少"],
-    "whitelist": [],
     "message": "海图信息及攻略请查询相关百科\n艦これ 攻略 Wiki http://wikiwiki.jp/kancolle/\n舰娘百科 http://zh.kcwiki.moe/"
   },
   {
     "keywords": ["官推"],
-    "whitelist": [],
     "message": "艦これ官方 Twitter：https://twitter.com/kancolle_staff\nkcwiki 官推翻译：http://t.kcwiki.moe/"
   },
   {
     "keywords": ["白屏"],
     "whitelist": ["不", "没", "还"],
-    "message": "白屏请先检查：\n1. poi 的代理设置是否正确\n2. poi 的主页是否不是 about:blank\n若仍有问题，请提供以下信息：\n1. poi 的版本号是什么？\n2. 用的是什么代理？\n3. poi 能否打开百度？",
-    "interval": 60
+    "message": "poi 白屏请先检查：\n1. poi 的代理设置是否正确\n2. poi 的主页是否不是 about:blank\n若仍有问题，请提供以下信息：\n1. poi 的版本号是什么？\n2. 用的是什么代理？\n3. poi 能否打开百度？"
   },
   {
     "keywords": ["窗口大小"],
     "whitelist": ["不", "没", "还"],
-    "message": "poi 窗口大小无法更改：\n1. 请按 Alt 打开菜单（Windows/Linux 用户）\n2. 在「poi」菜单中勾选「允许变更窗口大小」",
-    "interval": 60
+    "message": "poi 窗口大小无法更改：\n1. 请按 Alt 打开菜单（Windows/Linux 用户）\n2. 在「poi」菜单中勾选「允许变更窗口大小」"
   },
   {
     "keywords": ["删除config", "删config"],
-    "message": "删除 poi 配置文件：\n1. 关闭 poi\n2. 在文件管理器中打开 poi 数据目录\nWindows: %APPDATA%/poi\nMac: ~/Library/Application Support/poi\nLinux: ~/.config/poi\n3. 删除文件「config.cson」",
-    "interval": 60
+    "message": "删除 poi 配置文件：\n1. 关闭 poi\n2. 在文件管理器中打开 poi 数据目录\nWindows: %APPDATA%/poi\nMac: ~/Library/Application Support/poi\nLinux: ~/.config/poi\n3. 删除文件「config.cson」"
   },
   {
     "keywords": ["缓存猫"],
     "whitelist": ["不", "没", "还"],
-    "message": "缓存猫处理：\n1. 请清空 poi 自定义缓存。缓存目录可在 poi 左下角工具栏打开\n2. 请检查代理的缓存设置",
-    "interval": 60
+    "message": "缓存猫处理：\n1. 请清空 poi 自定义缓存。缓存目录可在 poi 左下角工具栏打开\n2. 请检查代理的缓存设置"
   },
   {
     "keywords": ["同步数据"],
-    "message": "您可以使用同步软件同步特定目录/文件、以同步 poi 数据\npoi 数据目录：\n* Windows: %APPDATA%/poi\n* Mac: ~/Library/Application Support/poi\n* Linux: ~/.config/poi\n需同步的目录/文件：\n* config.cson 设置\n* quest_tracking_123456789.cson 任务计数\n* akashic-records 航海日志\n* battle-detail 战斗详情\n* hairstrength 我变强了\n* hensei-nikki 编成日记\n* wheres-my-fuel-gone 耗资记录\n// 友情提示：调戏本条直接禁言一小时",
-    "interval": 60
+    "message": "您可以使用同步软件同步特定目录/文件、以同步 poi 数据\npoi 数据目录：\n* Windows: %APPDATA%/poi\n* Mac: ~/Library/Application Support/poi\n* Linux: ~/.config/poi\n需同步的目录/文件：\n* config.cson 设置\n* quest_tracking_123456789.cson 任务计数\n* akashic-records 航海日志\n* battle-detail 战斗详情\n* hairstrength 我变强了\n* hensei-nikki 编成日记\n* wheres-my-fuel-gone 耗资记录"
   },
   {
     "keywords": ["什么群", "啥群"],
-    "message": "这里是 poi 用户讨论群兼舰娘讨论群"
+    "message": "这里是 poi 用户讨论群兼舰娘讨论群",
+    "interval": 10
   },
   {
     "keywords": ["求奶", "奶我", "奶你", "奶他", "奶她"],
-    "message": "众人皆欧 唯你独非"
-  },
-  {
-    "keywords": ["复读"],
-    "message": "人类的本质，只是一台复读机。"
+    "message": "众人皆欧 唯你独非",
+    "interval": 10
   },
   {
     "keywords": ["早安", "早上好", "小鳖早"],
-    "message": "早安"
+    "message": "早安",
+    "interval": 2
   },
   {
     "keywords": ["午安", "中午好"],
-    "message": "午安"
+    "message": "午安",
+    "interval": 2
   },
   {
     "keywords": ["晚安", "好梦"],
-    "message": "晚安"
+    "message": "晚安",
+    "interval": 2
   }
 ]

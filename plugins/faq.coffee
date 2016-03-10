@@ -1,20 +1,17 @@
 fs = require 'fs'
 path = require 'path'
 
+DEFAULT_INTERVAL = 60
 FAQ = []
-DEFAULT_INTERVAL = 10
 LAST_TRIGGER = []
 
 fs.readFile path.join(__dirname, 'faq.json'), (err, data) ->
-  try
-    FAQ = JSON.parse data
-    for faq, i in FAQ
-      # TODO: check faq.keywords and faq.message
-      faq.whitelist ?= []
-      faq.interval ?= DEFAULT_INTERVAL
-      LAST_TRIGGER[i] = 0
-  catch err
-    console.error "Failed to load faq.json", err
+  FAQ = JSON.parse data
+  for faq, i in FAQ
+    # TODO: check faq.keywords and faq.message
+    faq.whitelist ?= []
+    faq.interval ?= DEFAULT_INTERVAL
+    LAST_TRIGGER[i] = 0
 
 match = (content, keywords) ->
   for keyword in keywords

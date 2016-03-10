@@ -6,7 +6,6 @@ REPEAT_COUNT_MIN = 2
 REPEAT_COUNT_MAX = 4
 BLACKLIST = []
 
-
 fs.readFile path.join(__dirname, 'repeat_blacklist.json'), (err, data) ->
   BLACKLIST = JSON.parse data
 
