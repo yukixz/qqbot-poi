@@ -36,25 +36,26 @@
     }
 
     Dispatcher.prototype.dispatch = function() {
-      var error, error1, i, j, len, len1, method, obj, params, plugin, ref, ref1, results;
+      var error, error1, i, j, len, len1, method, obj, params, plugin, ref, ref1, dispatched;
       params = 1 <= arguments.length ? slice.call(arguments, 0) : [];
       try {
         ref = this.listeners;
         for (i = 0, len = ref.length; i < len; i++) {
           plugin = ref[i];
-          plugin.apply(null, params);
+          dispatched = plugin.apply(null, params);
+          if (dispatched === true) {
+            break;
+          }
         }
         ref1 = this.obj_listeners;
-        results = [];
         for (j = 0, len1 = ref1.length; j < len1; j++) {
           plugin = ref1[j];
           obj = plugin[0], method = plugin[1];
-          results.push(obj[method].apply(obj, params));
+          obj[method].apply(obj, params);
         }
-        return results;
       } catch (error1) {
         error = error1;
-        return log.error(error);
+        log.error(error);
       }
     };
 
