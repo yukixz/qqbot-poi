@@ -16,7 +16,8 @@ module.exports = (content, send, robot, message) ->
       break
     # Send help message on out of range
     else if not (LOWER <= n <= UPPER)
-      return send("/roll 的有效范围为 #{LOWER} ~ #{UPPER}")
+      send("/roll 的有效范围为 #{LOWER} ~ #{UPPER}")
+      return true
     # Valid number
     else
       ranges.push n
@@ -26,3 +27,4 @@ module.exports = (content, send, robot, message) ->
   rolls = ranges.map (n) -> "#{Math.ceil(Math.random() * n)}/#{n}"
   name = message.from_user.nick
   send("[roll] #{name}: #{rolls.join ', '}")
+  return true

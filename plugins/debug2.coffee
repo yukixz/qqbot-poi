@@ -7,8 +7,8 @@ module.exports = (content, send, robot, message) ->
   if content == '/reload'
     robot.dispatcher.reload_plugin()
     send("已重新加载")
-    return
+    return true
 
   if content == '/debug'
     console.log("MESSAGE", JSON.stringify message)
-    return
+    return true

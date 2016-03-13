@@ -27,4 +27,4 @@ module.exports = (content, send, robot, message) ->
       if not match(content, faq.whitelist) and (now - LAST_TRIGGER[i]) > (faq.interval * 1000)
         LAST_TRIGGER[i] = now
         send(faq.message)
-      return
+      return true
