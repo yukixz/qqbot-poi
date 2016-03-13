@@ -16,6 +16,7 @@ plugins:
     - debug2
     - faq
     - roll
+    - repeat
     - notify
 
 # apiserver plugin configration
