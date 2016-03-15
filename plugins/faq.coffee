@@ -3,7 +3,6 @@ path = require 'path'
 
 DEFAULT_INTERVAL = 60
 FAQ = []
-LAST_TRIGGER = []
 
 fs.readFile path.join(__dirname, 'faq.json'), (err, data) ->
   FAQ = JSON.parse data
@@ -11,7 +10,7 @@ fs.readFile path.join(__dirname, 'faq.json'), (err, data) ->
     # TODO: check faq.keywords and faq.message
     faq.whitelist ?= []
     faq.interval ?= DEFAULT_INTERVAL
-    LAST_TRIGGER[i] = 0
+    faq.triggered = 0
 
 match = (content, keywords) ->
   for keyword in keywords
@@ -23,8 +22,17 @@ module.exports = (content, send, robot, message) ->
   content = content.toLowerCase()
   now = Date.now()
   for faq, i in FAQ
-    if match(content, faq.keywords)
-      if not match(content, faq.whitelist) and (now - LAST_TRIGGER[i]) > (faq.interval * 1000)
-        LAST_TRIGGER[i] = now
-        send(faq.message)
-      return true
+    # If mismatch keywords, try next faq.
+    continue if not match(content, faq.keywords)
+
+    # If match whitelist or in colddown, end module.
+    return true if match(content, faq.whitelist) or (now - faq.triggered) < (faq.interval * 1000)
+
+    if faq.message instanceof Array
+      message = faq.message[Math.floor(Math.random() * faq.message.length)]
+    else
+      message = faq.message
+
+    faq.triggered = now
+    send(message)
+    return true
