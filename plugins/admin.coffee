@@ -12,12 +12,12 @@ module.exports = (content, send, robot, message) ->
 
   if content == '/reload'
     robot.dispatcher.reload_plugin()
-    send("已重新加载插件")
+    send("重新加载插件")
     return true
 
   if content == '/update'
     robot.update_all_members()
-    send("正在刷新好友列表")
+    send("刷新好友列表")
     return true
 
   if content == '/debug'

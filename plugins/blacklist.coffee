@@ -12,4 +12,5 @@ match = (text, keywords) ->
   return false
 
 module.exports = (content, send, robot, message) ->
+  return true if content.length > 32
   return match(content.toLowerCase(), BLACKLIST)

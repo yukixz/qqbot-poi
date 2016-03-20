@@ -1,7 +1,7 @@
 fs = require 'fs'
 path = require 'path'
 
-DEFAULT_INTERVAL = 60
+DEFAULT_INTERVAL = 300
 FAQ = []
 
 fs.readFile path.join(__dirname, 'faq.json'), (err, data) ->
