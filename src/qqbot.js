@@ -641,13 +641,9 @@
       if (this.config.offline_msg_keeptime && new Date().getTime() - msg.time.getTime() > this.config.offline_msg_keeptime * 1000) {
         return;
       }
-      replied = false;
       reply = (function(_this) {
         return function(content) {
-          if (!replied) {
-            _this.reply_message(msg, content);
-          }
-          return replied = true;
+          _this.reply_message(msg, content);
         };
       })(this);
       return this.dispatcher.dispatch(msg.content, reply, this, msg);

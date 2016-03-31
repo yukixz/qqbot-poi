@@ -13,9 +13,12 @@ host: localhost
 
 # plugin list
 plugins:
-    - help
-    - debug
-    - apiserver
+    - debug2
+    - blacklist
+    - faq
+    - roll
+    - repeat
+    - notify
 
 # apiserver plugin configration
 api_port:  3200
